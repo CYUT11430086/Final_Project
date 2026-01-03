@@ -8,7 +8,8 @@ using namespace std;
 string names[20];
 int amounts[20];
 int recordCount = 0;
-vector<string> todo;
+string todo[20];
+int todoCount = 0;
 int totalSpent = 0;
 // ===== 主程式 =====
 int main() {
@@ -127,14 +128,19 @@ int main() {
             cin >> c;
 
             if (c == 1) {
-                string t;
-                cout << "輸入待辦事項：";
-                cin >> t;
-                todo.push_back(t);
+                if (todoCount >= 20) {
+                    cout << "待辦事項已滿\n";
+                } else {
+                    string t;
+                    cout << "輸入待辦事項：";
+                    cin >> t;
+                    todo[todoCount] = t;
+                    todoCount++;
+                }
             }
             else {
                 cout << "\n===== 待辦事項 =====\n";
-                for (size_t i = 0; i < todo.size(); i++) {
+                for (int i = 0; i < todoCount; i++) {
                     cout << i + 1 << ". " << todo[i] << endl;
                 }
             }
