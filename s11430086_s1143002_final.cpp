@@ -32,7 +32,7 @@ int main() {
 
             if (c == 1) {
                 if (recordCount >= 20) {
-                    cout << "記帳已滿 (最多20筆)！\n";
+                    cout << "記帳已滿\n";
                 } else {
                     string name;
                     int money;
